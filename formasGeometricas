@@ -1,0 +1,122 @@
+package br.com.formasGeometricas;
+
+public interface Forma {
+    public abstract double calculaArea();
+}
+
+
+package br.com.formasGeometricas;
+
+public class Circulo implements Forma {
+    private double raio;
+
+    public void exibeArea(){
+        System.out.println(calculaArea());
+    }
+
+    public void setRaio(double raio) {
+        this.raio = raio;
+    }
+
+    public double getRaio() {
+        return raio;
+    }
+    @Override
+    public double calculaArea() {
+        return Math.PI * raio * raio;
+    }
+}
+
+
+package br.com.formasGeometricas;
+
+public class Retangulo implements Forma {
+    private double base;
+    private double altura;
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setBase(double base) {
+        this.base = base;
+    }
+
+    public double getBase() {
+        return base;
+    }
+    public void exibeArea(){
+        System.out.println(calculaArea());
+    }
+
+    @Override
+    public double calculaArea() {
+        return (base * altura);
+    }
+}
+
+
+package br.com.formasGeometricas;
+
+public class Triangulo implements Forma {
+    private double base;
+    private double altura;
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setBase(double base) {
+        this.base = base;
+    }
+
+    public double getBase() {
+        return base;
+    }
+    public void exibeArea(){
+        System.out.println(calculaArea());
+    }
+
+    @Override
+    public double calculaArea() {
+        return (base * altura) / 2;
+    }
+}
+
+
+package br.com.formasGeometricas;
+
+public class TesteFormas {
+    public static void main(String[] args) {
+        Circulo circulo = new Circulo();
+        circulo.setRaio(2);
+        circulo.calculaArea();
+        circulo.exibeArea();
+
+        System.out.println();
+
+        Retangulo retangulo = new Retangulo();
+        retangulo.setBase(2);
+        retangulo.setAltura(3);
+        retangulo.calculaArea();
+        retangulo.exibeArea();
+
+        System.out.println();
+
+        Triangulo triangulo = new Triangulo();
+        triangulo.setBase(2);
+        triangulo.setAltura(4);
+        triangulo.calculaArea();
+        triangulo.exibeArea();
+
+
+    }
+}
